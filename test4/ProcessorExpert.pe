@@ -3,7 +3,7 @@
   <Header>
     <Name>test4</Name>
     <SavedBy>Lukas Vozenilek</SavedBy>
-    <ModificationStamp>4</ModificationStamp>
+    <ModificationStamp>5</ModificationStamp>
     <Date>2019-11-16</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1743-0713</PEversion>
@@ -3798,8 +3798,8 @@
         <ItemSymbol>PTD5_IRQC</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
-        <PinFuncPropStateId>&lt;Automatic&gt;</PinFuncPropStateId>
+        <Value>ISF flag and Interrupt on rising-edge.</Value>
+        <PinFuncPropStateId>state_1001</PinFuncPropStateId>
       </ItemState>
       <ItemState>
         <ItemSymbol>PTD5_MUX</ItemSymbol>
@@ -4706,8 +4706,8 @@
         <ItemSymbol>PTD3_IRQC</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
-        <PinFuncPropStateId>&lt;Automatic&gt;</PinFuncPropStateId>
+        <Value>ISF flag and Interrupt on rising-edge.</Value>
+        <PinFuncPropStateId>state_1001</PinFuncPropStateId>
       </ItemState>
       <ItemState>
         <ItemSymbol>PTD3_MUX</ItemSymbol>

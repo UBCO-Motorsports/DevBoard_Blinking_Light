@@ -43,6 +43,27 @@
 #define SW3 5U
 #define LEDG 15U
 
+  void PORTD_ISR(void) {
+	  //Only run ISR if a single pin has triggered interrupt
+
+	  switch (PINS_DRV_ReadPins(PTD) & (1<<SW2 | 1<<SW3)) {
+	  case 1<<SW2 | 1<<SW3:
+			  //Do nothing if both pressed
+			  PINS_DRV_ClearPortIntFlagCmd(PORTD);
+			  break;
+	  case 1<<SW2:
+			  PINS_DRV_TogglePins(PTD, 1<<LEDR);
+			  PINS_DRV_ClearPinIntFlagCmd(PORTD, SW2);
+			  break;
+	  case 1<<SW3:
+			  PINS_DRV_TogglePins(PTD, 1<<LEDG);
+			  PINS_DRV_ClearPinIntFlagCmd(PORTD, SW3);
+			  break;
+	  }
+
+
+  }
+
 int main(void)
 {
   /* Write your local variable definition here */
@@ -61,9 +82,14 @@ int main(void)
 
     PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
     PINS_DRV_SetPinsDirection(PTD, 1<<LEDR | 1<<LEDG );
+
+    INT_SYS_InstallHandler(PORT_IRQn, PORTD_ISR, (isr_t*)0);
+    INT_SYS_EnableIRQ(PORT_IRQn);
+
+
     for (;;) {
 
-
+    	/*
     	if (PINS_DRV_ReadPins(PTD) & (1<<SW2)) {
     		PINS_DRV_SetPins(PTD, 1<<LEDR);
     	} else {
@@ -75,8 +101,10 @@ int main(void)
     	} else {
     		PINS_DRV_ClearPins(PTD, 1<<LEDG);
     	}
+		*/
 
     }
+
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 1.4, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-11-16, 13:01, # CodeGen: 5
+**     Date/Time   : 2019-11-16, 13:20, # CodeGen: 6
 **     Abstract    :
 **
 **     Settings    :
@@ -502,7 +502,7 @@
 **              Pin 18: PTD5                               : 
 **                Custom name, Signal name                 : PTD5
 **                Interrupt Status Field                   : <Automatic>
-**                Interrupt Configuration Field            : <Automatic>
+**                Interrupt Configuration Field            : ISF flag and Interrupt on rising-edge.
 **                Pin Mux Field                            : <Automatic>
 **                Lock Field                               : <Automatic>
 **                Pull Enable Field                        : <Automatic>
@@ -636,7 +636,7 @@
 **              Pin 33: PTD3                               : 
 **                Custom name, Signal name                 : PTD3
 **                Interrupt Status Field                   : <Automatic>
-**                Interrupt Configuration Field            : <Automatic>
+**                Interrupt Configuration Field            : ISF flag and Interrupt on rising-edge.
 **                Pin Mux Field                            : <Automatic>
 **                Lock Field                               : <Automatic>
 **                Passive Filter Field                     : <Automatic>
